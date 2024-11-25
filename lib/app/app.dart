@@ -11,7 +11,8 @@ import 'package:Afaq/ui/views/forgot_password/forgot_password_view.dart';
 import 'package:Afaq/ui/views/otp_page/otp_page_view.dart';
 import 'package:Afaq/ui/views/reset_password/reset_password_view.dart';
 import 'package:Afaq/ui/views/password_changed/password_changed_view.dart';
-import 'package:Afaq/ui/views/selection/selection_view.dart';
+
+import '../ui/views/dashboard/dashboard_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -25,7 +26,7 @@ import 'package:Afaq/ui/views/selection/selection_view.dart';
     MaterialRoute(page: OtpPageView),
     MaterialRoute(page: ResetPasswordView),
     MaterialRoute(page: PasswordChangedView),
-    MaterialRoute(page: SelectionView),
+    MaterialRoute(page: DashboardView),
 // @stacked-route
   ],
   dependencies: [

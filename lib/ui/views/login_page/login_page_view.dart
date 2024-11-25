@@ -102,7 +102,12 @@ class LoginPageView extends StackedView<LoginPageViewModel> {
                   SizedBox(
                     height: 15.h,
                   ),
-                  Center(child: CustomButton(text: 'Log In', onPressed: () {})),
+                  Center(
+                      child: CustomButton(
+                          text: 'Log In',
+                          onPressed: () {
+                            viewModel.navigateToDashboardView();
+                          })),
                   SizedBox(
                     height: 15.h,
                   ),

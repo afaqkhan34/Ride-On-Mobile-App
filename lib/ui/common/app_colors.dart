@@ -8,4 +8,6 @@ class AppColors {
   static const KcAlertRed = Color(0xFFF87171);
   static const KcLightYellow = Color(0xFFFFE879);
   static const KcDarkYellow = Color(0xFFFFD60D);
+  static const Kcwhite =Color(0xFFFFFFFF);
+
 }

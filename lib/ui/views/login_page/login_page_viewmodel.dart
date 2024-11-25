@@ -33,6 +33,10 @@ class LoginPageViewModel extends BaseViewModel {
     _navigationService.navigateToSignUpView();
   }
 
+  navigateToDashboardView() {
+    _navigationService.navigateToDashboardView();
+  }
+
   navigateToForgotPasswordView() {
     _navigationService.navigateToForgotPasswordView();
   }

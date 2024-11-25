@@ -5,6 +5,7 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:Afaq/ui/views/dashboard/dashboard_view.dart' as _i11;
 import 'package:Afaq/ui/views/forgot_password/forgot_password_view.dart' as _i7;
 import 'package:Afaq/ui/views/home/home_view.dart' as _i2;
 import 'package:Afaq/ui/views/login_page/login_page_view.dart' as _i5;
@@ -12,7 +13,6 @@ import 'package:Afaq/ui/views/otp_page/otp_page_view.dart' as _i8;
 import 'package:Afaq/ui/views/password_changed/password_changed_view.dart'
     as _i10;
 import 'package:Afaq/ui/views/reset_password/reset_password_view.dart' as _i9;
-import 'package:Afaq/ui/views/selection/selection_view.dart' as _i11;
 import 'package:Afaq/ui/views/sign_up/sign_up_view.dart' as _i6;
 import 'package:Afaq/ui/views/start_page/start_page_view.dart' as _i4;
 import 'package:Afaq/ui/views/startup/startup_view.dart' as _i3;
@@ -40,7 +40,7 @@ class Routes {
 
   static const passwordChangedView = '/password-changed-view';
 
-  static const selectionView = '/selection-view';
+  static const dashboardView = '/dashboard-view';
 
   static const all = <String>{
     homeView,
@@ -52,7 +52,7 @@ class Routes {
     otpPageView,
     resetPasswordView,
     passwordChangedView,
-    selectionView,
+    dashboardView,
   };
 }
 
@@ -95,8 +95,8 @@ class StackedRouter extends _i1.RouterBase {
       page: _i10.PasswordChangedView,
     ),
     _i1.RouteDef(
-      Routes.selectionView,
-      page: _i11.SelectionView,
+      Routes.dashboardView,
+      page: _i11.DashboardView,
     ),
   ];
 
@@ -155,9 +155,9 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i11.SelectionView: (data) {
+    _i11.DashboardView: (data) {
       return _i12.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i11.SelectionView(),
+        builder: (context) => _i11.DashboardView(),
         settings: data,
       );
     },
@@ -297,14 +297,14 @@ extension NavigatorStateExtension on _i13.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToSelectionView([
+  Future<dynamic> navigateToDashboardView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return navigateTo<dynamic>(Routes.selectionView,
+    return navigateTo<dynamic>(Routes.dashboardView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -437,14 +437,14 @@ extension NavigatorStateExtension on _i13.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithSelectionView([
+  Future<dynamic> replaceWithDashboardView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return replaceWith<dynamic>(Routes.selectionView,
+    return replaceWith<dynamic>(Routes.dashboardView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
