@@ -14,4 +14,6 @@ class AppImages {
 class AppSVGS {
   static const String svgsPath = "assets/svg_icons";
   static const String googleIcon = "$svgsPath/Google.svg";
+  static const String locationIcon = "$svgsPath/location.svg";
+  static const String pickupIcon = "$svgsPath/pick_point.svg";
 }
