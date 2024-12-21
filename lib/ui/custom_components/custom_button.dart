@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget {
       onTap: onPressed, // Trigger callback when tapped
       child: Container(
         width: 327.w, // Fixed width
-        height: 38.h, // Fixed height
+        height: 52.h, // Fixed height
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16), // Border radius
           gradient: LinearGradient(

@@ -37,7 +37,7 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 40.h),
+                  70.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -47,6 +47,16 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
                         height: 46.h,
                       ),
                     ],
+                  ),
+                  Container(
+                    height: 39.h,
+                    width: 39.w,
+                    decoration: BoxDecoration(
+                      color: AppColors.KcDarkYellow,
+                      borderRadius: BorderRadius.circular(15),
+
+                    ),
+                    child: Icon(Icons.arrow_back_ios, color: AppColors.KcDarkGreyColor,),
                   ),
                   SizedBox(
                     height: 160.h,

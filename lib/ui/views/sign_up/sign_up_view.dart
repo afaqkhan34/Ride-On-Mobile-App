@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:Afaq/ui/common/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -40,7 +41,7 @@ class SignUpView extends StackedView<SignUpViewModel> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 40.h),
+                  70.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -51,69 +52,47 @@ class SignUpView extends StackedView<SignUpViewModel> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 120.h,
-                  ),
+                  47.verticalSpace,
                   Text(
                     'Sign Up',
                     style: TextStyles.largeBold,
                   ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
+                  30.verticalSpace,
                   Text('Enter user name', style: TextStyles.Regularlight),
-                  SizedBox(
-                    height: 3.h,
-                  ),
+                  5.verticalSpace,
                   CustomTextField(
                     hintText: 'Rideon001',
                   ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
+                  15.verticalSpace,
                   Text('Enter your email', style: TextStyles.Regularlight),
-                  SizedBox(
-                    height: 3.h,
-                  ),
+                  5.verticalSpace,
                   CustomTextField(
                     hintText: 'Rideon001@gmail.com',
                     controller: viewModel.emailController,
                   ),
-                  SizedBox(
-                    height: 3.h,
-                  ),
+                  15.verticalSpace,
                   Text('Enter your password', style: TextStyles.Regularlight),
-                  SizedBox(
-                    height: 3.h,
-                  ),
+                  5.verticalSpace,
                   CustomTextField(
                     hintText: '************',
                     controller: viewModel.passwordController,
                     obscureText: true,
                   ),
-                  SizedBox(
-                    height: 3.h,
-                  ),
+                  15.verticalSpace,
                   Text('Confirm password', style: TextStyles.Regularlight),
-                  SizedBox(
-                    height: 3.h,
-                  ),
+                  5.verticalSpace,
                   CustomTextField(
                     hintText: '************',
                     controller: viewModel.confirmPasswordController,
                     obscureText: true,
                   ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
+                  20.verticalSpace,
                   CustomButton(
                       text: 'Sign Up',
                       onPressed: () {
                         viewModel.navigateToLoginPageView();
                       }),
-                  SizedBox(
-                    height: 8.h,
-                  ),
+                  15.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -121,9 +100,7 @@ class SignUpView extends StackedView<SignUpViewModel> {
                         "Already have an account? ",
                         style: TextStyles.Regularlight,
                       ),
-                      SizedBox(
-                        width: 3.w,
-                      ),
+                      10.verticalSpace,
                       GestureDetector(
                         onTap: () {
                           viewModel.navigateToLoginPageView();
@@ -135,9 +112,7 @@ class SignUpView extends StackedView<SignUpViewModel> {
                       )
                     ],
                   ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
+                  10.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -148,21 +123,19 @@ class SignUpView extends StackedView<SignUpViewModel> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 6.h,
-                  ),
+                  10.verticalSpace,
                   GestureDetector(
                     onTap: () {
                       // Handle the onTap event
                     },
                     child: Container(
                       width: 327.w,
-                      height: 38.h,
+                      height: 52.h,
                       decoration: BoxDecoration(
                         color: Colors.transparent,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                          color: Color(0xFFE7E7E7),
+                          color: AppColors.KcBorder,
                           width: 1.7.w,
                         ),
                       ),
@@ -176,9 +149,7 @@ class SignUpView extends StackedView<SignUpViewModel> {
                               width: 20.w,
                               height: 20.h,
                             ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
+                            5.horizontalSpace,
                             Text(
                               'Continue with Google',
                               style: TextStyles.RegularBold,

@@ -28,7 +28,7 @@ class LoginPageView extends StackedView<LoginPageViewModel> {
         child: Stack(
           children: [
             Positioned(
-              top: 142,
+              top: 150,
               right: 0,
               child: Image.asset(
                 AppImages.backgroundImage,
@@ -42,7 +42,7 @@ class LoginPageView extends StackedView<LoginPageViewModel> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 40.h),
+                  70.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -53,39 +53,27 @@ class LoginPageView extends StackedView<LoginPageViewModel> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 120.h,
-                  ),
+                  194.verticalSpace,
                   Text(
                     'Log In',
                     style: TextStyles.largeBold,
                   ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
+                  30.verticalSpace,
                   Text('Enter your email', style: TextStyles.Regularlight),
-                  SizedBox(
-                    height: 3.h,
-                  ),
+                  5.verticalSpace,
                   CustomTextField(
                     hintText: 'Rideon001@gmail.com',
                     controller: viewModel.emailController,
                   ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
+                  15.verticalSpace,
                   Text('Enter your password', style: TextStyles.Regularlight),
-                  SizedBox(
-                    height: 3.h,
-                  ),
+                  5.verticalSpace,
                   CustomTextField(
                     hintText: '***********',
                     controller: viewModel.passwordController,
                     obscureText: true,
                   ),
-                  SizedBox(
-                    height: 3.h,
-                  ),
+                  5.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -99,18 +87,14 @@ class LoginPageView extends StackedView<LoginPageViewModel> {
                           )),
                     ],
                   ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
+                  20.verticalSpace,
                   Center(
                       child: CustomButton(
                           text: 'Log In',
                           onPressed: () {
                             viewModel.navigateToDashboardView();
                           })),
-                  SizedBox(
-                    height: 15.h,
-                  ),
+                  15.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -118,9 +102,7 @@ class LoginPageView extends StackedView<LoginPageViewModel> {
                         "Don't have an account? ",
                         style: TextStyles.Regularlight,
                       ),
-                      SizedBox(
-                        width: 3.h,
-                      ),
+                      5.verticalSpace,
                       GestureDetector(
                         onTap: () {
                           viewModel.navigateToSignUpView();
@@ -132,9 +114,7 @@ class LoginPageView extends StackedView<LoginPageViewModel> {
                       )
                     ],
                   ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
+                  10.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -145,16 +125,14 @@ class LoginPageView extends StackedView<LoginPageViewModel> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
+                  18.verticalSpace,
                   GestureDetector(
                     onTap: () {
                       // Handle the onTap event
                     },
                     child: Container(
                       width: 327.w,
-                      height: 38.h,
+                      height: 52.h,
                       decoration: BoxDecoration(
                         color: Colors.transparent,
                         borderRadius: BorderRadius.circular(10),
@@ -173,9 +151,7 @@ class LoginPageView extends StackedView<LoginPageViewModel> {
                               width: 20.w,
                               height: 20.h,
                             ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
+                            5.horizontalSpace,
                             Text(
                               'Continue with Google',
                               style: TextStyles.RegularBold,

@@ -23,7 +23,7 @@ class CustomTextField extends StatelessWidget {
     this.onTapIcon,
     this.icon,
     this.showBorder = true, // Default is true
-    this.borderColor = AppColors.KcNeutralGrey, // Default border color
+    this.borderColor = AppColors.KcBorder, // Default border color
     this.backgroundColor, // Optional background color
   }) : super(key: key);
 
@@ -31,7 +31,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 327.w, // Fixed width
-      height: 40.h, // Fixed height
+      height: 52.h, // Fixed height
       decoration: BoxDecoration(
         color: backgroundColor, // Optional background color
         borderRadius: BorderRadius.circular(16),
@@ -50,7 +50,7 @@ class CustomTextField extends StatelessWidget {
             obscureText: isObscured, // Toggle visibility dynamically
             decoration: InputDecoration(
               hintText: hintText,
-              hintStyle: TextStyles.Regularlight,
+              hintStyle: TextStyles.Regularlight.copyWith(color: AppColors.KcNeutralGrey),
               border: InputBorder.none,
               contentPadding:
               const EdgeInsets.symmetric(horizontal: 16, vertical: 16),

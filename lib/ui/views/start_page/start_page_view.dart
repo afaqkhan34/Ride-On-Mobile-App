@@ -1,12 +1,11 @@
-import 'package:Afaq/main.dart';
-import 'package:Afaq/ui/common/assets.dart';
-import 'package:Afaq/ui/common/textstyles.dart';
-import 'package:Afaq/ui/custom_components/custom_button.dart';
+import 'package:Afaq/ui/views/start_page/start_page_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stacked/stacked.dart';
 
-import 'start_page_viewmodel.dart';
+import '../../common/assets.dart';
+import '../../common/textstyles.dart';
+import '../../custom_components/custom_button.dart';
 
 class StartPageView extends StackedView<StartPageViewModel> {
   const StartPageView({Key? key}) : super(key: key);
@@ -22,10 +21,9 @@ class StartPageView extends StackedView<StartPageViewModel> {
         children: [
           // Logo at the top but vertically centered within its space
           Padding(
-            padding: const EdgeInsets.only(top: 35.0),
-            // Padding to push logo down a bit
+            padding: const EdgeInsets.only(top: 50.0),
             child: Align(
-              alignment: Alignment.topCenter, // Align logo to the top
+              alignment: Alignment.topCenter,
               child: Image.asset(
                 AppImages.rideLogo,
                 width: 171.w,
@@ -33,47 +31,32 @@ class StartPageView extends StackedView<StartPageViewModel> {
               ),
             ),
           ),
-          240.h.verticalSpace,
+          Spacer(flex: 5),
 
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              // Vertically center buttons
-              crossAxisAlignment: CrossAxisAlignment.center,
-              // Horizontally center
-              children: [
-                CustomButton(
-                    text: 'Log In',
-                    onPressed: () {
-                      viewModel.navigateToLoginPageView();
-                    }),
-                SizedBox(height: 15.h), // Space between the buttons
-                GestureDetector(
-                  onTap: () {},
-                  child: Text(
-                    'Create Your Account !',
-                    style: TextStyles.RegularBold,
-                  ),
-                ),
-              ],
+          CustomButton(
+              text: 'Log In',
+              onPressed: () {
+                viewModel.navigateToLoginPageView();
+              }),
+          SizedBox(height: 15.h),
+          GestureDetector(
+            onTap: () {},
+            child: Text(
+              'Create Your Account !',
+              style: TextStyles.RegularBold,
             ),
           ),
+          30.verticalSpace,
 
-          Spacer(
-            flex: 1,
-          ),
-          // Car Image at the bottom (You can also adjust size with MediaQuery for responsiveness)
-          SizedBox(
-            width: 286.w,
-            height: 250.h,
-            child: Image.asset(
-              AppImages.carImage,
-              width: MediaQuery.of(context).size.width *
-                  0.6.sw, // 80% of screen width
-              height: MediaQuery.of(context).size.height *
-                  0.4.sh, // 40% of screen height
-              fit: BoxFit.contain, // Ensure the image scales properly
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: SizedBox(
+              width: 286.w,
+              height: 400.h,
+              child: Image.asset(
+                AppImages.carImage,
+                fit: BoxFit.fitHeight,
+              ),
             ),
           ),
         ],
