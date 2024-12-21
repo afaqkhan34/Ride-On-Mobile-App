@@ -22,7 +22,7 @@ class StartPageView extends StackedView<StartPageViewModel> {
         children: [
           // Logo at the top but vertically centered within its space
           Padding(
-            padding: const EdgeInsets.only(top: 70.0),
+            padding: const EdgeInsets.only(top: 35.0),
             // Padding to push logo down a bit
             child: Align(
               alignment: Alignment.topCenter, // Align logo to the top
@@ -33,13 +33,8 @@ class StartPageView extends StackedView<StartPageViewModel> {
               ),
             ),
           ),
-          // Spacer for pushing the buttons vertically down
-          SizedBox(
-            height: 200.h,
-          ),
-          // This will ensure the buttons are pushed towards the center
+          240.h.verticalSpace,
 
-          // Buttons and "Create Account" Text centered horizontally
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
