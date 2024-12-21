@@ -9,6 +9,9 @@ class AppImages {
   static const String passwordReset = '$imagesPath/password.png';
   static const String rideLogo = '$imagesPath/ride_on.png';
   static const String profileLogo = '$imagesPath/profile.png';
+  static const String blackCar = '$imagesPath/black_car.png';
+  static const String yellowCar = '$imagesPath/yellow_car.png';
+  static const String mapS = '$imagesPath/map.png';
 }
 
 class AppSVGS {

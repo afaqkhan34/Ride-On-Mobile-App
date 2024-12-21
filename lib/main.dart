@@ -13,8 +13,8 @@ Future<void> main() async {
   setupBottomSheetUi();
   runApp(
     ScreenUtilInit(
-      designSize: Size(360,
-          640), // Design size for Android devices (use a typical screen size)
+      designSize: Size(384,
+          833),
       builder: (context, child) {
         return const MainApp(); // The widget that will be returned in the builder
       },
