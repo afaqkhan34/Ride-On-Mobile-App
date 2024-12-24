@@ -13,8 +13,7 @@ Future<void> main() async {
   setupBottomSheetUi();
   runApp(
     ScreenUtilInit(
-      designSize: Size(384,
-          833),
+      designSize: Size(384, 833),
       builder: (context, child) {
         return const MainApp(); // The widget that will be returned in the builder
       },

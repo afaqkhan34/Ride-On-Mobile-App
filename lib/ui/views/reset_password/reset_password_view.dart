@@ -37,7 +37,7 @@ class ResetPasswordView extends StackedView<ResetPasswordViewModel> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 40.h),
+                70.verticalSpace,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -48,38 +48,48 @@ class ResetPasswordView extends StackedView<ResetPasswordViewModel> {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 160.h,
+                24.verticalSpace,
+                GestureDetector(
+                  onTap: () {
+                    viewModel.navigateToOtpPageView();
+                  },
+                  child: Container(
+                    height: 39.h,
+                    width: 39.w,
+                    decoration: BoxDecoration(
+                      color: AppColors.KcDarkYellow,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: AppColors.KcDarkGreyColor,
+                        size: 18,
+                      ),
+                    ),
+                  ),
                 ),
+                179.verticalSpace,
                 Text(
                   'Reset Password',
                   style: TextStyles.largeBold,
                 ),
-                SizedBox(
-                  height: 20.h,
-                ),
+                24.verticalSpace,
                 Text('New password', style: TextStyles.Regularlight),
-                SizedBox(
-                  height: 3.h,
-                ),
+                5.verticalSpace,
                 CustomTextField(
                   hintText: '******',
                   obscureText: true,
                 ),
-                SizedBox(
-                  height: 10.h,
-                ),
+                15.verticalSpace,
                 Text('Confirm new password', style: TextStyles.Regularlight),
-                SizedBox(
-                  height: 3.h,
-                ),
+                5.verticalSpace,
                 CustomTextField(
                   hintText: '******',
                   obscureText: true,
                 ),
-                SizedBox(
-                  height: 20.h,
-                ),
+                20.verticalSpace,
                 CustomButton(
                     text: 'Reset Password',
                     onPressed: () {

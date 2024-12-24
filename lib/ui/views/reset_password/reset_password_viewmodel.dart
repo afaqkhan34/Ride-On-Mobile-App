@@ -34,4 +34,8 @@ class ResetPasswordViewModel extends BaseViewModel {
   navigateToPasswordChangedView() {
     _navigationService.navigateToPasswordChangedView();
   }
+
+  navigateToOtpPageView() {
+    _navigationService.navigateToOtpPageView();
+  }
 }

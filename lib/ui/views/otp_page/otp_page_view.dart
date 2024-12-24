@@ -37,7 +37,7 @@ class OtpPageView extends StackedView<OtpPageViewModel> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 40.h),
+                70.verticalSpace,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -48,16 +48,34 @@ class OtpPageView extends StackedView<OtpPageViewModel> {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 160.h,
+                24.verticalSpace,
+                GestureDetector(
+                  onTap: () {
+                    viewModel.navigateToForgotPasswordView();
+                  },
+                  child: Container(
+                    height: 39.h,
+                    width: 39.w,
+                    decoration: BoxDecoration(
+                      color: AppColors.KcDarkYellow,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: AppColors.KcDarkGreyColor,
+                        size: 18,
+                      ),
+                    ),
+                  ),
                 ),
+                179.verticalSpace,
                 Text(
                   'Enter OTP',
                   style: TextStyles.largeBold,
                 ),
-                SizedBox(
-                  height: 3.h,
-                ),
+                10.verticalSpace,
                 Text('An 4 digit OTP has been sent to',
                     style: TextStyles.Regularlight.copyWith(
                       color: AppColors.KcLightGreyColor,
@@ -65,9 +83,7 @@ class OtpPageView extends StackedView<OtpPageViewModel> {
                     )),
                 Text('Ride0001@gmail.com',
                     style: TextStyles.RegularBold.copyWith(fontSize: 15)),
-                SizedBox(
-                  height: 15.h,
-                ),
+                30.verticalSpace,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -96,17 +112,13 @@ class OtpPageView extends StackedView<OtpPageViewModel> {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 20.h,
-                ),
+                20.verticalSpace,
                 CustomButton(
                     text: 'Verify',
                     onPressed: () {
                       viewModel.navigateToResetPasswordView();
                     }),
-                SizedBox(
-                  height: 15.h,
-                ),
+                25.verticalSpace,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

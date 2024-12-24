@@ -13,6 +13,7 @@ import 'package:Afaq/ui/views/reset_password/reset_password_view.dart';
 import 'package:Afaq/ui/views/password_changed/password_changed_view.dart';
 
 import '../ui/views/dashboard/dashboard_view.dart';
+import 'package:Afaq/ui/views/trip_details/trip_details_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -27,6 +28,7 @@ import '../ui/views/dashboard/dashboard_view.dart';
     MaterialRoute(page: ResetPasswordView),
     MaterialRoute(page: PasswordChangedView),
     MaterialRoute(page: DashboardView),
+    MaterialRoute(page: TripDetailsView),
 // @stacked-route
   ],
   dependencies: [

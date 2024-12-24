@@ -57,9 +57,7 @@ class CustomDrawer extends StatelessWidget {
               shape: BoxShape.circle,
               color: AppColors.Kcwhite,
             ),
-            child: Icon(
-              Icons.arrow_back
-            ),
+            child: Icon(Icons.arrow_back),
           ),
 
           25.verticalSpace,
@@ -78,7 +76,7 @@ class CustomDrawer extends StatelessWidget {
                   children: [
                     Text(
                       'Gokul Ravichandran',
-                      style:  TextStyles.RegularBold,
+                      style: TextStyles.RegularBold,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -92,8 +90,7 @@ class CustomDrawer extends StatelessWidget {
                         Text(
                           '4.8',
                           style: TextStyles.RegularBold.copyWith(
-                            color: AppColors.KcNeutralGrey
-                          ),
+                              color: AppColors.KcNeutralGrey),
                         ),
                       ],
                     )
@@ -103,11 +100,9 @@ class CustomDrawer extends StatelessWidget {
                 Icon(
                   Icons.edit,
                 )
-
               ],
             ),
           ),
-
 
           // Menu Items
           Expanded(

@@ -23,4 +23,8 @@ class ForgotPasswordViewModel extends BaseViewModel {
   navigateToOtpPageView() {
     _navigationService.navigateToOtpPageView();
   }
+
+  navigateToLoginViewPage() {
+    _navigationService.navigateToLoginPageView();
+  }
 }

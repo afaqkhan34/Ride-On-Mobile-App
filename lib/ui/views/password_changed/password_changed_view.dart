@@ -37,7 +37,7 @@ class PasswordChangedView extends StackedView<PasswordChangedViewModel> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 40.h),
+                  70.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -48,9 +48,7 @@ class PasswordChangedView extends StackedView<PasswordChangedViewModel> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 100.h,
-                  ),
+                  149.verticalSpace,
                   Center(
                     child: Image.asset(
                       AppImages.passwordReset,
@@ -58,30 +56,24 @@ class PasswordChangedView extends StackedView<PasswordChangedViewModel> {
                       height: 208.h,
                     ),
                   ),
-                  SizedBox(
-                    height: 4.h,
-                  ),
+                  24.verticalSpace,
                   Center(
                       child: Text(
                     'Password Reset Successfully!',
                     style: TextStyles.mediumBold,
                   )),
-                  SizedBox(
-                    height: 5.h,
-                  ),
+                  10.verticalSpace,
                   Center(
                     child: Text(
                       'Your password is changed now.',
                       style: TextStyles.RegularMedium.copyWith(
                         fontSize: 12,
-                        color: AppColors.KcMediumGreyColor,
+                        color: AppColors.KcDarkGreyColor,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
+                  20.verticalSpace,
                   CustomButton(
                       text: 'Back To Login',
                       onPressed: () {

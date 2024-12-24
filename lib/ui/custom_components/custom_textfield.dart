@@ -37,9 +37,9 @@ class CustomTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         border: showBorder
             ? Border.all(
-          color: borderColor, // Use the provided border color
-          width: 1.17.w,
-        )
+                color: borderColor, // Use the provided border color
+                width: 1.17.w,
+              )
             : null, // No border if showBorder is false
       ),
       child: StatefulBuilder(
@@ -50,36 +50,38 @@ class CustomTextField extends StatelessWidget {
             obscureText: isObscured, // Toggle visibility dynamically
             decoration: InputDecoration(
               hintText: hintText,
-              hintStyle: TextStyles.Regularlight.copyWith(color: AppColors.KcNeutralGrey),
+              hintStyle: TextStyles.Regularlight.copyWith(
+                  color: AppColors.KcNeutralGrey),
               border: InputBorder.none,
               contentPadding:
-              const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
               suffixIcon: obscureText
                   ? IconButton(
-                icon: Icon(
-                  isObscured ? Icons.visibility_off : Icons.visibility,
-                  color: Colors.grey, // Icon color
-                ),
-                onPressed: () {
-                  setState(() {
-                    isObscured = !isObscured; // Toggle visibility
-                  });
-                },
-              )
+                      icon: Icon(
+                        isObscured ? Icons.visibility_off : Icons.visibility,
+                        color: Colors.grey, // Icon color
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          isObscured = !isObscured; // Toggle visibility
+                        });
+                      },
+                    )
                   : (icon != null
-                  ? (icon is String
-                  ? Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: SvgPicture.asset(
-                  icon,
-                  width: 24.w,
-                  height: 24.h,
-                ),
-              )
-                  : InkWell(
-                onTap: onTapIcon,
-                  child: Icon(icon as IconData, color: Colors.grey)))
-                  : null), // No suffix icon if none provided
+                      ? (icon is String
+                          ? Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: SvgPicture.asset(
+                                icon,
+                                width: 24.w,
+                                height: 24.h,
+                              ),
+                            )
+                          : InkWell(
+                              onTap: onTapIcon,
+                              child:
+                                  Icon(icon as IconData, color: Colors.grey)))
+                      : null), // No suffix icon if none provided
             ),
           );
         },

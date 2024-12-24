@@ -48,46 +48,48 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
                       ),
                     ],
                   ),
-                  Container(
-                    height: 39.h,
-                    width: 39.w,
-                    decoration: BoxDecoration(
-                      color: AppColors.KcDarkYellow,
-                      borderRadius: BorderRadius.circular(15),
-
+                  24.verticalSpace,
+                  GestureDetector(
+                    onTap: () {
+                      viewModel.navigateToLoginViewPage();
+                    },
+                    child: Container(
+                      height: 39.h,
+                      width: 39.w,
+                      decoration: BoxDecoration(
+                        color: AppColors.KcDarkYellow,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: AppColors.KcDarkGreyColor,
+                          size: 18,
+                        ),
+                      ),
                     ),
-                    child: Icon(Icons.arrow_back_ios, color: AppColors.KcDarkGreyColor,),
                   ),
-                  SizedBox(
-                    height: 160.h,
-                  ),
+                  179.verticalSpace,
                   Text(
                     'Forgot Password',
                     style: TextStyles.largeBold,
                   ),
-                  SizedBox(
-                    height: 3.h,
-                  ),
+                  10.verticalSpace,
                   Text(
                       'Don’t worry! it happens. Please enter phone number associated with your account',
                       style: TextStyles.Regularlight.copyWith(
                         color: AppColors.KcLightGreyColor,
                         fontSize: 15,
                       )),
-                  SizedBox(
-                    height: 15.h,
-                  ),
+                  30.verticalSpace,
                   Text('Enter your email', style: TextStyles.Regularlight),
-                  SizedBox(
-                    height: 3.h,
-                  ),
+                  5.verticalSpace,
                   CustomTextField(
                     hintText: 'Rideon001@gmail.com',
                     controller: viewModel.emailController,
                   ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
+                  20.verticalSpace,
                   CustomButton(
                       text: 'Get OTP',
                       onPressed: () {

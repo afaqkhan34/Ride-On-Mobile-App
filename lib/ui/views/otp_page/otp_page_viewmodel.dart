@@ -82,4 +82,8 @@ class OtpPageViewModel extends BaseViewModel {
   navigateToResetPasswordView() {
     _navigationService.navigateToResetPasswordView();
   }
+
+  navigateToForgotPasswordView() {
+    _navigationService.navigateToForgotPasswordView();
+  }
 }
