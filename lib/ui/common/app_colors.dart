@@ -11,4 +11,5 @@ class AppColors {
   static const Kcwhite = Color(0xFFFFFFFF);
   static const KcBorder = Color(0xFFE7E7E7);
   static const KcYellow = Color(0xFFFFDC71);
+  static const KcYellowWarm= Color(0xFFFFD60D);
 }
