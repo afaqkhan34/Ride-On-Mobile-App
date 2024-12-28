@@ -12,15 +12,16 @@ import 'package:Afaq/ui/views/login_page/login_page_view.dart' as _i5;
 import 'package:Afaq/ui/views/otp_page/otp_page_view.dart' as _i8;
 import 'package:Afaq/ui/views/password_changed/password_changed_view.dart'
     as _i10;
+import 'package:Afaq/ui/views/payment_screen/payment_screen_view.dart' as _i13;
 import 'package:Afaq/ui/views/reset_password/reset_password_view.dart' as _i9;
 import 'package:Afaq/ui/views/sign_up/sign_up_view.dart' as _i6;
 import 'package:Afaq/ui/views/start_page/start_page_view.dart' as _i4;
 import 'package:Afaq/ui/views/startup/startup_view.dart' as _i3;
 import 'package:Afaq/ui/views/trip_details/trip_details_view.dart' as _i12;
-import 'package:flutter/material.dart' as _i13;
+import 'package:flutter/material.dart' as _i14;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i14;
+import 'package:stacked_services/stacked_services.dart' as _i15;
 
 class Routes {
   static const homeView = '/home-view';
@@ -45,6 +46,8 @@ class Routes {
 
   static const tripDetailsView = '/trip-details-view';
 
+  static const paymentScreenView = '/payment-screen-view';
+
   static const all = <String>{
     homeView,
     startupView,
@@ -57,6 +60,7 @@ class Routes {
     passwordChangedView,
     dashboardView,
     tripDetailsView,
+    paymentScreenView,
   };
 }
 
@@ -106,72 +110,82 @@ class StackedRouter extends _i1.RouterBase {
       Routes.tripDetailsView,
       page: _i12.TripDetailsView,
     ),
+    _i1.RouteDef(
+      Routes.paymentScreenView,
+      page: _i13.PaymentScreenView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.StartPageView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.StartPageView(),
         settings: data,
       );
     },
     _i5.LoginPageView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.LoginPageView(),
         settings: data,
       );
     },
     _i6.SignUpView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.SignUpView(),
         settings: data,
       );
     },
     _i7.ForgotPasswordView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.ForgotPasswordView(),
         settings: data,
       );
     },
     _i8.OtpPageView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.OtpPageView(),
         settings: data,
       );
     },
     _i9.ResetPasswordView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.ResetPasswordView(),
         settings: data,
       );
     },
     _i10.PasswordChangedView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.PasswordChangedView(),
         settings: data,
       );
     },
     _i11.DashboardView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => _i11.DashboardView(),
         settings: data,
       );
     },
     _i12.TripDetailsView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.TripDetailsView(),
+        settings: data,
+      );
+    },
+    _i13.PaymentScreenView: (data) {
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i13.PaymentScreenView(),
         settings: data,
       );
     },
@@ -184,7 +198,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i14.NavigationService {
+extension NavigatorStateExtension on _i15.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -339,6 +353,20 @@ extension NavigatorStateExtension on _i14.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToPaymentScreenView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.paymentScreenView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -487,6 +515,20 @@ extension NavigatorStateExtension on _i14.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.tripDetailsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithPaymentScreenView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.paymentScreenView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
