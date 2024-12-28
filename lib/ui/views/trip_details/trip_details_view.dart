@@ -169,16 +169,16 @@ class TripDetailsView extends StackedView<TripDetailsViewModel> {
                                       color: AppColors.KcNeutralGrey,
                                       fontWeight: FontWeight.w600),
                                 ),
-
                               ],
                             )
                           ],
                         ),
                         63.horizontalSpace,
                         InkWell(
-                          onTap: (){},
+                          onTap: () {},
                           child: Container(
-                            padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
                             width: 52.w,
                             height: 52.h,
                             decoration: BoxDecoration(
@@ -190,11 +190,11 @@ class TripDetailsView extends StackedView<TripDetailsViewModel> {
                                   spreadRadius: 2,
                                   blurRadius: 8,
                                   offset: Offset(1, 1),
-                                ),],
+                                ),
+                              ],
                             ),
                             child: CustomImageView(
                               svgPath: AppSVGS.chatIcon,
-
                             ),
                           ),
                         ),
@@ -202,16 +202,17 @@ class TripDetailsView extends StackedView<TripDetailsViewModel> {
                         InkWell(
                           onTap: () {},
                           child: Container(
-                            padding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 12, horizontal: 12),
                             width: 52.w,
                             height: 52.h,
                             decoration: BoxDecoration(
-                              gradient:RadialGradient(
+                              gradient: RadialGradient(
                                 colors: [
                                   // Yellow
                                   AppColors.KcYellow,
                                   Color(0xFFFFE879),
-                                  AppColors.Kcwhite,// Transparent yellow
+                                  AppColors.Kcwhite, // Transparent yellow
                                 ],
                                 radius: 2.5,
                                 center: Alignment.topLeft,
@@ -237,24 +238,35 @@ class TripDetailsView extends StackedView<TripDetailsViewModel> {
                   30.verticalSpace,
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.w),
-                    child: Text('Car Detail:',style: TextStyles.mediumLight,textAlign: TextAlign.start,),
+                    child: Text(
+                      'Car Detail:',
+                      style: TextStyles.mediumLight,
+                      textAlign: TextAlign.start,
+                    ),
                   ),
                   5.verticalSpace,
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.w),
-                    child: Text('Honda Accord 2023 • White',style: TextStyles.Regularlight.copyWith(
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.KcLightGreyColor,
-                    ),),
+                    child: Text(
+                      'Honda Accord 2023 • White',
+                      style: TextStyles.Regularlight.copyWith(
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.KcLightGreyColor,
+                      ),
+                    ),
                   ),
                   74.verticalSpace,
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 40.w),
-                    child: Text('Trip Detail',style: TextStyles.mediumLight,),
+                    child: Text(
+                      'Trip Detail',
+                      style: TextStyles.mediumLight,
+                    ),
                   ),
                   10.verticalSpace,
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 41, vertical: 16.h),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 41, vertical: 16.h),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(
@@ -272,7 +284,11 @@ class TripDetailsView extends StackedView<TripDetailsViewModel> {
                             // Pickup Location Icon and Text
                             Column(
                               children: [
-                                SvgPicture.asset(AppSVGS.pickupIcon, height: 18.h,width: 18.w,),
+                                SvgPicture.asset(
+                                  AppSVGS.pickupIcon,
+                                  height: 18.h,
+                                  width: 18.w,
+                                ),
                                 1.verticalSpace,
                                 Container(
                                   height: 31.h,
@@ -297,7 +313,11 @@ class TripDetailsView extends StackedView<TripDetailsViewModel> {
                                   ),
                                 ),
                                 // Icon(Icons.location_on_outlined, color: AppColors.KcYellow, size: 18),
-                                SvgPicture.asset(AppSVGS.locationIcon,height: 18.h,width: 15.w,),
+                                SvgPicture.asset(
+                                  AppSVGS.locationIcon,
+                                  height: 18.h,
+                                  width: 15.w,
+                                ),
                               ],
                             ),
                             10.horizontalSpace,
@@ -329,25 +349,27 @@ class TripDetailsView extends StackedView<TripDetailsViewModel> {
                       ],
                     ),
                   ),
-30.verticalSpace,
-
-Row(
-  mainAxisAlignment: MainAxisAlignment.center,
-  children: [
-    SizedBox(
-      height : 52.h,
-        width: 150.w,
-        child: CustomButton(text: 'Cancel Trip', onPressed: (){})),
-    10.horizontalSpace,
-    SizedBox(
-      height: 52.h,
-        width: 150.w,
-        child: CustomButton(text: 'Modify Trip', onPressed: (){})),
-  ],
-),
+                  40.verticalSpace,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                          height: 52.h,
+                          width: 150.w,
+                          child: CustomButton(
+                              text: 'Cancel Trip', onPressed: () {})),
+                      26.horizontalSpace,
+                      SizedBox(
+                          height: 52.h,
+                          width: 150.w,
+                          child: CustomButton(
+                              text: 'Modify Trip', onPressed: () {
+                                viewModel.navigateToPaymentScreenView();
+                          })),
+                    ],
+                  ),
                 ],
               ),
-
             ),
           ),
         ],
@@ -361,7 +383,6 @@ Row(
   ) =>
       TripDetailsViewModel();
 }
-
 
 class DottedBorderPainter extends CustomPainter {
   final Color color;
@@ -397,4 +418,3 @@ class DottedBorderPainter extends CustomPainter {
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
-

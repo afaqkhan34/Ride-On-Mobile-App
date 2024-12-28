@@ -173,9 +173,10 @@ class DashboardView extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(right: 13),
                       child: CustomButton(
-                          text: 'Confirm Booking', onPressed: () {
+                          text: 'Confirm Booking',
+                          onPressed: () {
                             viewModel.navigateToTripDetailsView();
-                      }),
+                          }),
                     ),
                   ],
                 ),
