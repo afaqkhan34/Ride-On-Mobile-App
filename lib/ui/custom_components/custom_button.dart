@@ -3,14 +3,18 @@ import 'package:Afaq/ui/common/textstyles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'custom_image_view.dart';
+
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
+  final String? iconPath;
 
   const CustomButton({
     Key? key,
     required this.text,
     required this.onPressed,
+    this.iconPath,
   }) : super(key: key);
 
   @override
@@ -41,10 +45,26 @@ class CustomButton extends StatelessWidget {
           ],
         ),
         child: Center(
-          child: Text(
-            text,
-            style: TextStyles.RegularBold,
-          ),
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                if (iconPath != null) ...[
+                  SizedBox(), // Spacing between text and icon
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 5.w),
+                    child: CustomImageView(
+                      svgPath: iconPath!,
+                      height: 24.h,
+                      width: 24.w,
+                    ),
+                  ),
+                ],
+                Text(
+                  text,
+                  style: TextStyles.RegularBold,
+                ),
+              ]),
         ),
       ),
     );

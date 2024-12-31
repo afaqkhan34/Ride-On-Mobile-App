@@ -25,4 +25,9 @@ class AppSVGS {
   static const String chatIcon = "$svgsPath/Chat.svg";
   static const String cashIcon = "$svgsPath/cash.svg";
   static const String cardIcon = "$svgsPath/card.svg";
+  static const String editIcon = "$svgsPath/edit.svg";
+  static const String tripIcon = "$svgsPath/trip.svg";
+  static const String supportIcon = "$svgsPath/support.svg";
+  static const String paymentIcon = "$svgsPath/payment.svg";
+  static const String starIcon = "$svgsPath/star.svg";
 }

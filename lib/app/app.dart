@@ -15,6 +15,8 @@ import 'package:Afaq/ui/views/password_changed/password_changed_view.dart';
 import '../ui/views/dashboard/dashboard_view.dart';
 import 'package:Afaq/ui/views/trip_details/trip_details_view.dart';
 import 'package:Afaq/ui/views/payment_screen/payment_screen_view.dart';
+import 'package:Afaq/ui/views/profile_setting/profile_setting_view.dart';
+import 'package:Afaq/ui/views/trip_history/trip_history_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -31,6 +33,8 @@ import 'package:Afaq/ui/views/payment_screen/payment_screen_view.dart';
     MaterialRoute(page: DashboardView),
     MaterialRoute(page: TripDetailsView),
     MaterialRoute(page: PaymentScreenView),
+    MaterialRoute(page: ProfileSettingView),
+    MaterialRoute(page: TripHistoryView),
 // @stacked-route
   ],
   dependencies: [
