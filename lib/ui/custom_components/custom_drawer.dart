@@ -1,9 +1,17 @@
 import 'package:Afaq/ui/common/app_colors.dart';
 import 'package:Afaq/ui/common/assets.dart';
 import 'package:Afaq/ui/custom_components/custom_image_view.dart';
+import 'package:Afaq/ui/views/dashboard/dashboard_view.dart';
+import 'package:Afaq/ui/views/login_page/login_page_view.dart';
+import 'package:Afaq/ui/views/payment_screen/payment_screen_view.dart';
+import 'package:Afaq/ui/views/profile_setting/profile_setting_view.dart';
+import 'package:Afaq/ui/views/trip_details/trip_details_view.dart';
+import 'package:Afaq/ui/views/trip_history/trip_history_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stacked_services/stacked_services.dart';
 
+import '../../app/app.locator.dart';
 import '../common/textstyles.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -13,42 +21,7 @@ class CustomDrawer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Profile Section
-          // UserAccountsDrawerHeader(
-          //   decoration: BoxDecoration(
-          //     color: Colors.white,
-          //   ),
-          //   accountName: Text(
-          //     'Gokul Ravichandran',
-          //     style: TextStyle(
-          //       color: Colors.black,
-          //       fontWeight: FontWeight.bold,
-          //     ),
-          //   ),
-          //   accountEmail: Row(
-          //     children: [
-          //       Icon(Icons.star, color: Colors.amber, size: 18),
-          //       SizedBox(width: 4),
-          //       Text(
-          //         '4.8',
-          //         style: TextStyle(color: Colors.grey),
-          //       ),
-          //     ],
-          //   ),
-          //   currentAccountPicture: CircleAvatar(
-          //     backgroundImage: AssetImage(
-          //         AppImages.profileLogo), // Replace with your image path
-          //   ),
-          //   otherAccountsPictures: [
-          //     IconButton(
-          //       icon: Icon(Icons.edit, color: Colors.grey),
-          //       onPressed: () {
-          //         // Handle edit profile
-          //         print('Edit profile tapped!');
-          //       },
-          //     ),
-          //   ],
-          // ),
+         
           Container(
             margin: EdgeInsets.only(left: 16.w),
             width: 40.w,
@@ -113,8 +86,10 @@ class CustomDrawer extends StatelessWidget {
                   title: Text('Booking Page'),
                   trailing: Icon(Icons.arrow_forward_ios, size: 16),
                   onTap: () {
-                    // Handle navigation
-                    print('Booking Page tapped!');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => DashboardView()),
+                    );
                   },
                 ),
                 ListTile(
@@ -122,8 +97,10 @@ class CustomDrawer extends StatelessWidget {
                   title: Text('Trip Details'),
                   trailing: Icon(Icons.arrow_forward_ios, size: 16),
                   onTap: () {
-                    // Handle navigation
-                    print('Trip Details tapped!');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TripDetailsView()),
+                    );
                   },
                 ),
                 ListTile(
@@ -131,8 +108,10 @@ class CustomDrawer extends StatelessWidget {
                   title: Text('Payment'),
                   trailing: Icon(Icons.arrow_forward_ios, size: 16),
                   onTap: () {
-                    // Handle navigation
-                    print('Payment tapped!');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PaymentScreenView()),
+                    );
                   },
                 ),
                 ListTile(
@@ -140,8 +119,10 @@ class CustomDrawer extends StatelessWidget {
                   title: Text('Trip History'),
                   trailing: Icon(Icons.arrow_forward_ios, size: 16),
                   onTap: () {
-                    // Handle navigation
-                    print('Trip History tapped!');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TripHistoryView()),
+                    );
                   },
                 ),
                 ListTile(
@@ -149,8 +130,10 @@ class CustomDrawer extends StatelessWidget {
                   title: Text('Settings'),
                   trailing: Icon(Icons.arrow_forward_ios, size: 16),
                   onTap: () {
-                    // Handle navigation
-                    print('Settings tapped!');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProfileSettingView()),
+                    );
                   },
                 ),
               ],
@@ -166,8 +149,10 @@ class CustomDrawer extends StatelessWidget {
                 SizedBox(width: 8),
                 GestureDetector(
                   onTap: () {
-                    // Handle logout
-                    print('Logout tapped!');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginPageView()),
+                    );
                   },
                   child: Text(
                     'Log Out',
