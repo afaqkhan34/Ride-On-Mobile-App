@@ -18,10 +18,10 @@ class PaymentScreenView extends StackedView<PaymentScreenViewModel> {
 
   @override
   Widget builder(
-      BuildContext context,
-      PaymentScreenViewModel viewModel,
-      Widget? child,
-      ) {
+    BuildContext context,
+    PaymentScreenViewModel viewModel,
+    Widget? child,
+  ) {
     return Scaffold(
       key: viewModel.scaffoldKey,
       drawer: CustomDrawer(),
@@ -94,7 +94,7 @@ class PaymentScreenView extends StackedView<PaymentScreenViewModel> {
                 actions: [
                   GestureDetector(
                     onTap: () {
-                      // Add profile navigation logic here
+                      viewModel.navigateToProfileSettingView();
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -153,7 +153,7 @@ class PaymentScreenView extends StackedView<PaymentScreenViewModel> {
                   ),
                   75.verticalSpace,
                   Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: 29.w),
+                    padding: EdgeInsets.symmetric(horizontal: 29.w),
                     child: Row(
                       children: [
                         Text(
@@ -172,7 +172,8 @@ class PaymentScreenView extends StackedView<PaymentScreenViewModel> {
                     iconPath: AppSVGS.cardIcon,
                     title: 'Card',
                     subtitle: 'Balance : Rs 250.00',
-                    paymentMethod: PaymentMethod.card,  // Pass the card payment method
+                    paymentMethod:
+                        PaymentMethod.card, // Pass the card payment method
                   ),
                   buildPaymentCard(
                     viewModel: viewModel,
@@ -180,12 +181,13 @@ class PaymentScreenView extends StackedView<PaymentScreenViewModel> {
                     iconPath: AppSVGS.cashIcon,
                     title: 'Cash',
                     subtitle: 'Prepare your cash',
-                    paymentMethod: PaymentMethod.cash,  // Pass the cash payment method
+                    paymentMethod:
+                        PaymentMethod.cash, // Pass the cash payment method
                   ),
                   42.verticalSpace,
                   Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: 29.w),
-                    child: CustomButton(text: 'Pay', onPressed: (){}),
+                    padding: EdgeInsets.symmetric(horizontal: 29.w),
+                    child: CustomButton(text: 'Pay', onPressed: () {}),
                   ),
                 ],
               ),
@@ -206,7 +208,8 @@ class PaymentScreenView extends StackedView<PaymentScreenViewModel> {
   }) {
     return GestureDetector(
       onTap: () {
-        viewModel.toggleSelection(paymentMethod);  // Toggle selection for the payment method
+        viewModel.toggleSelection(
+            paymentMethod); // Toggle selection for the payment method
       },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 35),
@@ -248,7 +251,7 @@ class PaymentScreenView extends StackedView<PaymentScreenViewModel> {
               width: 28.w,
               color: viewModel.selectedPaymentMethod == paymentMethod
                   ? null
-                  : AppColors.KcBorder,  // Highlight the selected payment method
+                  : AppColors.KcBorder, // Highlight the selected payment method
             ),
           ],
         ),
@@ -257,5 +260,6 @@ class PaymentScreenView extends StackedView<PaymentScreenViewModel> {
   }
 
   @override
-  PaymentScreenViewModel viewModelBuilder(BuildContext context) => PaymentScreenViewModel();
+  PaymentScreenViewModel viewModelBuilder(BuildContext context) =>
+      PaymentScreenViewModel();
 }

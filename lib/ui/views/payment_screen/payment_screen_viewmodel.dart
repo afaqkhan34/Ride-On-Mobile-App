@@ -1,5 +1,9 @@
+import 'package:Afaq/app/app.router.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
+
+import '../../../app/app.locator.dart';
 
 enum PaymentMethod { none, card, cash }
 
@@ -17,5 +21,11 @@ class PaymentScreenViewModel extends BaseViewModel {
       _selectedPaymentMethod = paymentMethod;
     }
     notifyListeners(); // Notify the view to update
+  }
+
+  final _navigationService = locator<NavigationService>();
+
+  navigateToProfileSettingView() {
+    _navigationService.navigateToProfileSettingView();
   }
 }

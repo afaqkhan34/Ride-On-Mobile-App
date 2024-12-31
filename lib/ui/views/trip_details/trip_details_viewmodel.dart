@@ -12,4 +12,8 @@ class TripDetailsViewModel extends BaseViewModel {
   navigateToPaymentScreenView() {
     _navigationService.navigateToPaymentScreenView();
   }
+
+  navigateToProfileSettingView() {
+    _navigationService.navigateToProfileSettingView();
+  }
 }

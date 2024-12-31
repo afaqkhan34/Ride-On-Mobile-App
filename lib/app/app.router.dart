@@ -13,15 +13,18 @@ import 'package:Afaq/ui/views/otp_page/otp_page_view.dart' as _i8;
 import 'package:Afaq/ui/views/password_changed/password_changed_view.dart'
     as _i10;
 import 'package:Afaq/ui/views/payment_screen/payment_screen_view.dart' as _i13;
+import 'package:Afaq/ui/views/profile_setting/profile_setting_view.dart'
+    as _i14;
 import 'package:Afaq/ui/views/reset_password/reset_password_view.dart' as _i9;
 import 'package:Afaq/ui/views/sign_up/sign_up_view.dart' as _i6;
 import 'package:Afaq/ui/views/start_page/start_page_view.dart' as _i4;
 import 'package:Afaq/ui/views/startup/startup_view.dart' as _i3;
 import 'package:Afaq/ui/views/trip_details/trip_details_view.dart' as _i12;
-import 'package:flutter/material.dart' as _i14;
+import 'package:Afaq/ui/views/trip_history/trip_history_view.dart' as _i15;
+import 'package:flutter/material.dart' as _i16;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i15;
+import 'package:stacked_services/stacked_services.dart' as _i17;
 
 class Routes {
   static const homeView = '/home-view';
@@ -48,6 +51,10 @@ class Routes {
 
   static const paymentScreenView = '/payment-screen-view';
 
+  static const profileSettingView = '/profile-setting-view';
+
+  static const tripHistoryView = '/trip-history-view';
+
   static const all = <String>{
     homeView,
     startupView,
@@ -61,6 +68,8 @@ class Routes {
     dashboardView,
     tripDetailsView,
     paymentScreenView,
+    profileSettingView,
+    tripHistoryView,
   };
 }
 
@@ -114,78 +123,98 @@ class StackedRouter extends _i1.RouterBase {
       Routes.paymentScreenView,
       page: _i13.PaymentScreenView,
     ),
+    _i1.RouteDef(
+      Routes.profileSettingView,
+      page: _i14.ProfileSettingView,
+    ),
+    _i1.RouteDef(
+      Routes.tripHistoryView,
+      page: _i15.TripHistoryView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.StartPageView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.StartPageView(),
         settings: data,
       );
     },
     _i5.LoginPageView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.LoginPageView(),
         settings: data,
       );
     },
     _i6.SignUpView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.SignUpView(),
         settings: data,
       );
     },
     _i7.ForgotPasswordView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.ForgotPasswordView(),
         settings: data,
       );
     },
     _i8.OtpPageView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.OtpPageView(),
         settings: data,
       );
     },
     _i9.ResetPasswordView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.ResetPasswordView(),
         settings: data,
       );
     },
     _i10.PasswordChangedView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.PasswordChangedView(),
         settings: data,
       );
     },
     _i11.DashboardView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => _i11.DashboardView(),
         settings: data,
       );
     },
     _i12.TripDetailsView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.TripDetailsView(),
         settings: data,
       );
     },
     _i13.PaymentScreenView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => const _i13.PaymentScreenView(),
+        settings: data,
+      );
+    },
+    _i14.ProfileSettingView: (data) {
+      return _i16.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i14.ProfileSettingView(),
+        settings: data,
+      );
+    },
+    _i15.TripHistoryView: (data) {
+      return _i16.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i15.TripHistoryView(),
         settings: data,
       );
     },
@@ -198,7 +227,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i15.NavigationService {
+extension NavigatorStateExtension on _i17.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -367,6 +396,34 @@ extension NavigatorStateExtension on _i15.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToProfileSettingView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.profileSettingView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToTripHistoryView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.tripHistoryView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -529,6 +586,34 @@ extension NavigatorStateExtension on _i15.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.paymentScreenView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithProfileSettingView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.profileSettingView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithTripHistoryView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.tripHistoryView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

@@ -88,7 +88,7 @@ class DashboardView extends StatelessWidget {
                   actions: [
                     GestureDetector(
                       onTap: () {
-                        // Add profile navigation logic here
+                        viewModel.navigateToProfileSettingView();
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),

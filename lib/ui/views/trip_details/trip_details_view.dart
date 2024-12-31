@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:Afaq/ui/common/textstyles.dart';
 import 'package:Afaq/ui/custom_components/custom_button.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +10,7 @@ import 'package:stacked/stacked.dart';
 import '../../common/app_colors.dart';
 import '../../common/assets.dart';
 import '../../common/ui_helpers.dart';
+import '../../custom_components/custom_dotted_painter.dart';
 import '../../custom_components/custom_drawer.dart';
 import '../../custom_components/custom_image_view.dart';
 import 'trip_details_viewmodel.dart';
@@ -93,7 +96,7 @@ class TripDetailsView extends StackedView<TripDetailsViewModel> {
                 actions: [
                   GestureDetector(
                     onTap: () {
-                      // Add profile navigation logic here
+                      viewModel.navigateToProfileSettingView();
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -363,9 +366,10 @@ class TripDetailsView extends StackedView<TripDetailsViewModel> {
                           height: 52.h,
                           width: 150.w,
                           child: CustomButton(
-                              text: 'Modify Trip', onPressed: () {
+                              text: 'Modify Trip',
+                              onPressed: () {
                                 viewModel.navigateToPaymentScreenView();
-                          })),
+                              })),
                     ],
                   ),
                 ],
@@ -384,37 +388,3 @@ class TripDetailsView extends StackedView<TripDetailsViewModel> {
       TripDetailsViewModel();
 }
 
-class DottedBorderPainter extends CustomPainter {
-  final Color color;
-  final double width;
-  final double dashWidth;
-  final double dashSpacing;
-
-  DottedBorderPainter({
-    required this.color,
-    this.width = 1.0,
-    this.dashWidth = 4.0,
-    this.dashSpacing = 2.0,
-  });
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = width
-      ..style = PaintingStyle.stroke;
-
-    double startY = 0.0;
-    while (startY < size.height) {
-      canvas.drawLine(
-        Offset(0, startY),
-        Offset(0, startY + dashWidth),
-        paint,
-      );
-      startY += dashWidth + dashSpacing;
-    }
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
-}
