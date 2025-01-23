@@ -40,7 +40,9 @@ class StartPageView extends StackedView<StartPageViewModel> {
               }),
           SizedBox(height: 15.h),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              viewModel.navigateToSignUpView();
+            },
             child: Text(
               'Create Your Account !',
               style: TextStyles.RegularBold,
