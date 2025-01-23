@@ -1,3 +1,4 @@
+import 'package:Afaq/ui/custom_components/custom_app_bar.dart';
 import 'package:Afaq/ui/custom_components/custom_button.dart';
 import 'package:Afaq/ui/custom_components/custom_textfield.dart';
 import 'package:flutter/material.dart';
@@ -32,76 +33,18 @@ class DashboardView extends StatelessWidget {
             ),
 
             // AppBar on top of the map
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: Container(
-                height: 90.h,
-                decoration: BoxDecoration(
-                  color: AppColors.Kcwhite,
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(32),
-                    bottomRight: Radius.circular(32),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.KcDarkGreyColor.withOpacity(0.1),
-                      blurRadius: 10,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: AppBar(
-                  backgroundColor: Colors.transparent,
-                  elevation: 0,
-                  leading: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Container(
-                      margin: EdgeInsets.symmetric(vertical: 5.h),
-                      width: 44.w,
-                      height: 32.h,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8.0),
-                          color: AppColors.Kcwhite,
-                          boxShadow: [
-                            BoxShadow(
-                              color: AppColors.KcDarkGreyColor.withOpacity(0.1),
-                              blurRadius: 10,
-                              offset: const Offset(0, 4),
-                            ),
-                          ]),
-                      child: IconButton(
-                        onPressed: () {
-                          viewModel.scaffoldKey.currentState?.openDrawer();
-                        },
-                        icon: const Icon(Icons.menu, color: Colors.black),
-                      ),
-                    ),
-                  ),
-                  title: Image.asset(
-                    AppImages.rideLogo,
-                    height: 35.h,
-                    width: 132.w,
-                  ),
-                  centerTitle: true,
-                  actions: [
-                    GestureDetector(
-                      onTap: () {
-                        viewModel.navigateToProfileSettingView();
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        child: CircleAvatar(
-                          backgroundImage: AssetImage(AppImages.profileLogo),
-                          radius: 20.r,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            Column(
+              children: [
+                CustomAppBar(
+                    leadingIcon: Icon(Icons.menu),
+                    onLeadingPressed: () {
+                      viewModel.scaffoldKey.currentState?.openDrawer();
+                    },
+                    logo: AppImages.rideLogo,
+                    profileImage: AppImages.profileLogo),
+              ],
             ),
+
 
             Positioned(
               top: 120.h,

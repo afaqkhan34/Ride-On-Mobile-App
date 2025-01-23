@@ -9,6 +9,7 @@ import 'package:stacked/stacked.dart';
 
 import '../../common/app_colors.dart';
 import '../../common/assets.dart';
+import '../../custom_components/custom_app_bar.dart';
 import '../../custom_components/custom_dotted_painter.dart';
 import 'trip_history_viewmodel.dart';
 
@@ -28,68 +29,16 @@ class TripHistoryView extends StackedView<TripHistoryViewModel> {
       body: Column(
         children: [
           // Header Section
-          Container(
-            height: 90.h,
-            decoration: BoxDecoration(
-              color: AppColors.Kcwhite,
-              borderRadius: const BorderRadius.only(
-                bottomLeft: Radius.circular(32),
-                bottomRight: Radius.circular(32),
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: AppColors.KcDarkGreyColor.withOpacity(0.1),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: AppBar(
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              leading: Container(
-                margin: EdgeInsets.symmetric(vertical: 5.h,horizontal: 5.w),
-                width: 44.w,
-                height: 32.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  color: AppColors.Kcwhite,
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.KcDarkGreyColor.withOpacity(0.1),
-                      blurRadius: 10,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: IconButton(
-                  onPressed: () {
+          Column(
+            children: [
+              CustomAppBar(
+                  leadingIcon: Icon(Icons.menu),
+                  onLeadingPressed: () {
                     viewModel.scaffoldKey.currentState?.openDrawer();
                   },
-                  icon: const Icon(Icons.menu, color: Colors.black),
-                ),
-              ),
-              title: Image.asset(
-                AppImages.rideLogo,
-                height: 35.h,
-                width: 132.w,
-              ),
-              centerTitle: true,
-              actions: [
-                GestureDetector(
-                  onTap: () {
-                    viewModel.navigateToProfileSettingView();
-                  },
-                  child: Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: 16.w),
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage(AppImages.profileLogo),
-                      radius: 20.r,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+                  logo: AppImages.rideLogo,
+                  profileImage: AppImages.profileLogo),
+            ],
           ),
 
           // Body Section with Scrolling
